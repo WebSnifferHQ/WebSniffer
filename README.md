@@ -1,4 +1,5 @@
-# WebSniffer
+# Web Sniffer
+
 View HTTP(S) Request and Response headers. Find the live version at **[WebSniffer.CC](https://websniffer.cc/)**.
 
 WebSniffer is an online tool for easily making HTTP requests (GET/POST/HEAD) and viewing the responses.
