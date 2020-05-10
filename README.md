@@ -10,4 +10,4 @@ This is based off of the online service at Web-Sniffer.Net but doen't reuse any 
 
 Developed by [Karen Tamrazyan](https://www.tamrazyan.com/).
 
-Distributed under the GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
+Distributed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
