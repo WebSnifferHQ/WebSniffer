@@ -17,6 +17,8 @@ View HTTP(S) Request and Response headers. Find the live version at **[WebSniffe
 [![Issues][issues-shield]][issues-url]
 [![License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
+[![Facebook][facebook-shield]][facebook-url]
+[![YouTube][youtube-shield]][youtube-url]
 [![Twitter][twitter-shield]][twitter-url]
 
 
@@ -45,5 +47,12 @@ Distributed under the [GNU General Public License v3.0](https://www.gnu.org/lice
 [license-url]: https://github.com/freewarelovers/WebSniffer/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/showcase/websniffer/
+
+[facebook-shield]: https://img.shields.io/badge/-Facebook-black.svg?style=flat-square&logo=facebook&colorB=555
+[facebook-url]: https://www.facebook.com/websniffer.cc
+
+[youtube-shield]: https://img.shields.io/badge/-YouTube-black.svg?style=flat-square&logo=youtube&colorB=555
+[youtube-url]: https://www.youtube.com/channel/UCHtLNbdagCIfir1ulloAEhQ?sub_confirmation=1
+
 [twitter-shield]: https://img.shields.io/twitter/follow/Web_Sniffer?label=Follow&style=social
 [twitter-url]: https://twitter.com/intent/follow?screen_name=Web_Sniffer
