@@ -1,4 +1,4 @@
-# Web Sniffer
+# WebSniffer
 
 View HTTP(S) Request and Response headers. Find the live version at **[WebSniffer.CC](https://websniffer.cc/)**.
 
