@@ -46,13 +46,13 @@ Distributed under the [GNU General Public License v3.0](https://www.gnu.org/lice
 [license-shield]: https://img.shields.io/github/license/freewarelovers/WebSniffer
 [license-url]: https://github.com/freewarelovers/WebSniffer/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/showcase/websniffer/
+[linkedin-url]: https://www.linkedin.com/company/websniffer/
 
 [facebook-shield]: https://img.shields.io/badge/-Facebook-black.svg?style=flat-square&logo=facebook&colorB=555
-[facebook-url]: https://www.facebook.com/websniffer.cc
+[facebook-url]: https://www.facebook.com/WebSnifferHQ
 
 [youtube-shield]: https://img.shields.io/badge/-YouTube-black.svg?style=flat-square&logo=youtube&colorB=555
 [youtube-url]: https://www.youtube.com/channel/UCHtLNbdagCIfir1ulloAEhQ?sub_confirmation=1
 
 [twitter-shield]: https://img.shields.io/twitter/follow/Web_Sniffer?label=Follow&style=social
-[twitter-url]: https://twitter.com/intent/follow?screen_name=Web_Sniffer
+[twitter-url]: https://twitter.com/intent/follow?screen_name=WebSnifferHQ
