@@ -54,5 +54,5 @@ Distributed under the [GNU General Public License v3.0](https://www.gnu.org/lice
 [youtube-shield]: https://img.shields.io/badge/-YouTube-black.svg?style=flat-square&logo=youtube&colorB=555
 [youtube-url]: https://www.youtube.com/channel/UCHtLNbdagCIfir1ulloAEhQ?sub_confirmation=1
 
-[twitter-shield]: https://img.shields.io/twitter/follow/Web_Sniffer?label=Follow&style=social
+[twitter-shield]: https://img.shields.io/twitter/follow/WebSnifferHQ?label=Follow&style=social
 [twitter-url]: https://twitter.com/intent/follow?screen_name=WebSnifferHQ
