@@ -1,6 +1,6 @@
 # WebSniffer
 
-View HTTP(S) Request and Response headers. Find the live version at **[WebSniffer.CC](https://websniffer.cc/)**.
+View HTTP(S) Request and Response headers. Find the live version at **[WebSniffer.com](https://websniffer.com/)**.
 
 <!-- PROJECT SHIELDS -->
 <!--
