@@ -1,3 +1,0 @@
-<?php
-// nothing yet here, stay tuned...
-?>
