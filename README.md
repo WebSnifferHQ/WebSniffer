@@ -29,10 +29,6 @@ The online web sniffer tool is useful when tracing redirects, affiliated links, 
 
 This is based off of the online service at Web-Sniffer.Net but doen't reuse any of its code except of the look & feel. Essentially, it's a web-sniffer.net alternative, which is open source and can be also self-hosted.
 
-Developed by [Karen Tamrazyan](https://tamrazyan.com/).
-
-Distributed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
-
 # Development instructions:
 You need to have npm installed
 
