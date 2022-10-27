@@ -27,6 +27,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"is-reachable": "^5.2.1",
 		"whois": "^2.13.9"
 	}
 }
