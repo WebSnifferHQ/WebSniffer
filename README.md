@@ -34,7 +34,7 @@ You need to have npm installed
 
 - clone this porject
 - cd into the project's root directory
-- npm -i
+- npm install
 - npm run dev
 
 <!-- MARKDOWN LINKS & IMAGES -->
