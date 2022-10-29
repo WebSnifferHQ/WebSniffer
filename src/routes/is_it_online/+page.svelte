@@ -1,32 +1,30 @@
 <script>
-    import { enhance } from '$app/forms';
+    import { page } from '$app/stores';
+    import  getMessage from './usecases/getMessage.js';
 
-    export let form;
+    const currentPath = $page.url.pathname;
+    const serverParameterName = "url";
 
-    $: message = getMessage(form);
+    let message = "";
+    let urlToCheck = "";
      
-    function getMessage(state) {
-        let tempMessage = "";
-        switch(state) {
-            case true: {
-                tempMessage = "The site is online";
-                break;
-            }
-            case false: {
-                tempMessage = "The site is offline";
-                break;
-            }
-            default: {
-                tempMessage = "Enter a site to check";
-            }
-        }
-        return tempMessage;
+
+    async function checkSite() {
+        const fetchUrl = currentPath + `?${serverParameterName}=${urlToCheck}`;
+
+        const response = await fetch(fetchUrl);
+        const responseJson = await response.json();
+
+        const isOnlineMessage = getMessage(responseJson.is_alive);
+        message = `${responseJson.url_to_check} ${isOnlineMessage}`;
     }
 </script>
 
 <div>
-    <form method="post" use:enhance>
-        <input name="url"/>
+    <form on:submit|preventDefault={checkSite}>
+        <label value="Enter a site to check if it's online or not">
+            <input bind:value={urlToCheck}/>
+        </label>
         <button type="submit">Check if online</button>
     </form>
     <p>{message}</p>
