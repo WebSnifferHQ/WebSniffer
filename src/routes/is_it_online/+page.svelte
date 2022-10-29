@@ -20,6 +20,8 @@
     }
 </script>
 
+<h1>Is It Online</h1>
+
 <div>
     <form on:submit|preventDefault={checkSite}>
         <label value="Enter a site to check if it's online or not">
@@ -29,3 +31,5 @@
     </form>
     <p>{message}</p>
 </div>
+
+<p>&laquo; <a href="/">Web Sniffer</a></p>
