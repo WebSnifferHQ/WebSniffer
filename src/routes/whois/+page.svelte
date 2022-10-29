@@ -15,6 +15,8 @@
     }
 </script>
 
+<h1>WHOIS Lookup</h1>
+
 <div>
     <form on:submit|preventDefault={checkSite}>
         <label value="Enter a site to check it's WHOIS records">
