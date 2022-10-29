@@ -4,8 +4,11 @@ export default function formattedServerData(data) {
 
     const noEmptyEntries = getRidOfEmptyEntries(lines);
     const noPrivateFields = getRidOfPrivateFields(noEmptyEntries);
-    
-    return noPrivateFields;
+    const noExtraSpaces = getRidOfExtraSpaces(noPrivateFields);
+
+    const turnToJsonObject = makeToJson(noExtraSpaces);
+
+    return turnToJsonObject;
 }
 
 function splitOnNewLine(text) {
@@ -34,4 +37,25 @@ function getRidOfPrivateFields(whoisInfo) {
     return whoisInfo.filter((element) => {
         return !element.includes("REDACTED FOR PRIVACY");
     })
+}
+
+function getRidOfExtraSpaces(whoisInfo) {
+    return whoisInfo.map((info) => {
+        return info.trim();
+    });
+}
+
+function makeToJson(whoisInfo) {
+    const split = whoisInfo.map((info) => {
+        return info.split(':');
+    });
+
+    const whoisObject = {};
+    split.forEach(element => {
+        if(!element[0] || !element[1]){
+            return;
+        }
+        whoisObject[element[0]] = element[1];
+    });
+    return whoisObject;
 }

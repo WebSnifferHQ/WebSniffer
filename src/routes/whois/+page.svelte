@@ -26,7 +26,7 @@
     {#if data}
         {#each data as singleWhoisServer}
             <h3>{singleWhoisServer.server}</h3>
-            {#each singleWhoisServer.data as item}
+            {#each Object.entries(singleWhoisServer.data) as item}
                 <p>{item}</p>
             {/each}
         {/each}
