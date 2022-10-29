@@ -35,3 +35,5 @@
     {/if}
 
 </div>
+
+<p>&laquo; <a href="/">Web Sniffer</a></p>
