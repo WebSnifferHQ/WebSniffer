@@ -20,7 +20,7 @@
     }
 </script>
 
-<h1>Is It Online</h1>
+<h1><a href="/is_it_online" style="text-decoration: none;">Is It Online</a></h1>
 
 <div>
     <form on:submit|preventDefault={checkSite}>
