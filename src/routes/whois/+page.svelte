@@ -10,8 +10,7 @@
     async function checkSite() {
         const fetchUrl = currentPath + `?${serverParameterName}=${urlToCheck}`;
         const response = await fetch(fetchUrl);
-        data = (await response.json()).data;
-        console.log(data);
+        data = (await response.json()).formattedData;
     }
 </script>
 
@@ -28,7 +27,7 @@
     {#if data}
         {#each data as singleWhoisServer}
             <h2>WHOIS server: {singleWhoisServer.server}</h2>
-            <div style="background-color:#dcdcdc;border:1px solid grey;padding:5px;border-radius:5px;">
+            <div class="whois_lookup_output">
                 {#each Object.entries(singleWhoisServer.data) as item}
                 <p>{item}</p>
                 {/each}
@@ -39,3 +38,12 @@
 </div>
 
 <p>&laquo; <a href="/">WebSniffer</a></p>
+
+<style>
+    .whois_lookup_output {
+        background-color:#dcdcdc;
+        border:1px solid grey;
+        padding:5px;
+        border-radius:5px;
+    }
+</style>

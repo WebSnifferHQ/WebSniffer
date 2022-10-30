@@ -10,13 +10,28 @@ export async function GET(request) {
                             console.log(error);
                             return invalid(400, error.message);
                         });
-    data.forEach(element => {
-        element.data = formattedServerData(element.data);
-    });
+    const formattedData = formatData(data);
+    console.log(data);
     return new Response(
         JSON.stringify({
             url_to_check: urlToCheck,
-            data
+            data,
+            formattedData
         })
         );
+}
+
+function formatData(data) {
+    const dataCopy = JSON.parse(JSON.stringify(data));
+    dataCopy.forEach(element => {
+        element.data = formattedServerData(element.data);
+    });
+    return filterEmptyData(dataCopy);
+}
+
+// Sometimes data has only empty or private fields that get filtered in formattedServerData function
+function filterEmptyData(data) {
+    return data.filter((item) => {
+        return Object.keys(item.data).length > 0;
+    });
 }
