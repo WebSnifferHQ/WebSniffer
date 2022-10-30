@@ -36,4 +36,4 @@
 
 </div>
 
-<p>&laquo; <a href="/">Web Sniffer</a></p>
+<p>&laquo; <a href="/">WebSniffer</a></p>
