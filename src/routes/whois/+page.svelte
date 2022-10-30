@@ -15,7 +15,7 @@
     }
 </script>
 
-<h1>WHOIS Lookup</h1>
+<h1><a href="/whois" style="text-decoration: none;">WHOIS Lookup</a></h1>
 
 <div>
     <form on:submit|preventDefault={checkSite}>
