@@ -28,12 +28,10 @@
     {#if data}
         {#each data as singleWhoisServer}
             <h2>WHOIS server: {singleWhoisServer.server}</h2>
-            <div style="background-color:#dcdcdc;border:1px solid grey;padding:5px;border-radius:5px;overflow:auto;">
-            <pre>
+            <div style="background-color:#dcdcdc;border:1px solid grey;padding:5px;border-radius:5px;">
                 {#each Object.entries(singleWhoisServer.data) as item}
-                {item}
+                <p>{item}</p>
                 {/each}
-            </pre>
             </div>
         {/each}
     {/if}
