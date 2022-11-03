@@ -1,28 +1,26 @@
 <script>
     import { page } from '$app/stores';
+    import SiteUrlForm from '$lib/components/lookup/SiteUrlForm.svelte';
 
     const currentPath = $page.url.pathname;
     const serverParameterName = "url";
 
-    let urlToCheck = "";
     let data = undefined;
 
-    async function checkSite() {
+    async function checkSite(urlToCheck) {
         const fetchUrl = currentPath + `?${serverParameterName}=${urlToCheck}`;
         const response = await fetch(fetchUrl);
         data = (await response.json()).formattedData;
     }
 </script>
 
-<h1><a href="/whois" style="text-decoration: none;">WHOIS Lookup</a></h1>
+<h1><a href="/lookup/whois" style="text-decoration: none;">WHOIS Lookup</a></h1>
 
 <div>
-    <form on:submit|preventDefault={checkSite}>
-        <label value="Enter a site to check it's WHOIS records">
-            <input bind:value={urlToCheck}/>
-        </label>
-        <button type="submit">whois</button>
-    </form>
+    <SiteUrlForm
+    label="Enter a site to check it's WHOIS records"
+    submit_button_text="whois"
+    on_submit={checkSite} />
 
     {#if data}
         {#each data as singleWhoisServer}
@@ -36,8 +34,6 @@
     {/if}
 
 </div>
-
-<p>&laquo; <a href="/">WebSniffer</a></p>
 
 <style>
     .whois_lookup_output {

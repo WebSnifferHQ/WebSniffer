@@ -1,15 +1,15 @@
 <script>
     import { page } from '$app/stores';
     import  getMessage from './usecases/getMessage.js';
+    import SiteUrlForm from '$lib/components/lookup/SiteUrlForm.svelte';
 
     const currentPath = $page.url.pathname;
     const serverParameterName = "url";
 
     let message = "";
-    let urlToCheck = "";
      
 
-    async function checkSite() {
+    async function checkSite(urlToCheck) {
         const fetchUrl = currentPath + `?${serverParameterName}=${urlToCheck}`;
 
         const response = await fetch(fetchUrl);
@@ -20,16 +20,13 @@
     }
 </script>
 
-<h1><a href="/is_it_online" style="text-decoration: none;">Is It Online</a></h1>
+<h1><a href="/lookup/is_it_online" style="text-decoration: none;">Is It Online</a></h1>
 
 <div>
-    <form on:submit|preventDefault={checkSite}>
-        <label value="Enter a site to check if it's online or not">
-            <input bind:value={urlToCheck}/>
-        </label>
-        <button type="submit">Check if online</button>
-    </form>
+    <SiteUrlForm
+    label="Enter a site to check if it's online or not"
+    submit_button_text="Check if online"
+    on_submit={checkSite} />
+
     <p>{message}</p>
 </div>
-
-<p>&laquo; <a href="/">WebSniffer</a></p>
