@@ -20,7 +20,7 @@
     }
 </script>
 
-<h1><a href="/lookup/is_it_online" style="text-decoration: none;">Is It Online</a></h1>
+<h1><a href="/lookup/is-it-online" style="text-decoration: none;">Is It Online</a></h1>
 
 <div>
     <SiteUrlForm
