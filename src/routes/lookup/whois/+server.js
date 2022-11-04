@@ -11,7 +11,6 @@ export async function GET(request) {
                             return invalid(400, error.message);
                         });
     const formattedData = formatData(data);
-    console.log(data);
     return new Response(
         JSON.stringify({
             url_to_check: urlToCheck,

@@ -47,7 +47,8 @@ function getRidOfExtraSpaces(whoisInfo) {
 
 function makeToJson(whoisInfo) {
     const split = whoisInfo.map((info) => {
-        return info.split(':');
+        const [first, ...rest] = info.split(':');
+        return [first, rest.join(':')];
     });
 
     const whoisObject = {};
