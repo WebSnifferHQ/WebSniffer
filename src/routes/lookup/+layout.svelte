@@ -1,6 +1,14 @@
-<div>
+<script>
+  import { Center, Container } from "@svelteuidev/core";
+</script>
 
-    <slot/>
+<Container>
+  <div>
+
+    
+    <slot />
+
 
     <p>&laquo; <a href="/">WebSniffer</a></p>
-</div>
+  </div>
+</Container>

@@ -27,6 +27,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@svelteuidev/composables": "^0.7.5",
+		"@svelteuidev/core": "^0.7.5",
 		"is-reachable": "^5.2.1",
 		"whois": "^2.13.9"
 	}
