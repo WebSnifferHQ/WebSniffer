@@ -21,8 +21,6 @@ View HTTP(S) Request and Response headers. Find the live version at **[WebSniffe
 [![YouTube][youtube-shield]][youtube-url]
 [![Twitter][twitter-shield]][twitter-url]
 
-
-
 WebSniffer is an online tool for easily making HTTP requests (GET/POST/HEAD) and viewing the responses.
 
 The online web sniffer tool is useful when tracing redirects, affiliated links, doing web or REST development.
@@ -36,6 +34,10 @@ You need to have npm installed
 - cd into the project's root directory
 - npm install
 - npm run dev
+
+# License
+
+[GPL-3.0 license](LICENSE) &copy; [WebSniffer](https://websniffer.com/)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
