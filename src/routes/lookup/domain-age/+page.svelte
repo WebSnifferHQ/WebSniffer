@@ -9,29 +9,33 @@
   let regDate = "";
   let domainName = "";
   let age = "";
-  let data = undefined;
+  let data = "";
+  let error = "";
   //   let dataParts = [];
 
   async function checkSite(urlToCheck) {
-    const fetchUrl = currentPath + `?${serverParameterName}=${urlToCheck}`;
-    const response = await fetch(fetchUrl);
-    data = (await response.json()).data;
-    let dataParts = data.split("T");
-    regDate = dataParts[0];
+    try {
+      const fetchUrl = currentPath + `?${serverParameterName}=${urlToCheck}`;
+      const response = await fetch(fetchUrl);
+      data = (await response.json()).data;
+      let dataParts = data.split("T");
+      regDate = dataParts[0];
 
-    let today = new Date();
-    let dateOfReg = new Date(regDate);
+      let today = new Date();
+      let dateOfReg = new Date(regDate);
 
-    //calculate the difference in the dates
-    var diffInMillisecond = today.valueOf() - dateOfReg.valueOf();
+      //calculate the difference in the dates
+      var diffInMillisecond = today.valueOf() - dateOfReg.valueOf();
 
-    //convert the difference in milliseconds to years and months and days
-    var year_age = Math.floor(diffInMillisecond / 31536000000);
-    var day_age = Math.floor((diffInMillisecond % 31536000000) / 86400000);
-    // var month_age = Math.floor(day_age / 30);
-    // day_age = day_age % 30;
-    age = ` ${year_age} years, ${day_age} days`;
-    domainName = urlToCheck;
+      //convert the difference in milliseconds to years and months and days
+      var year_age = Math.floor(diffInMillisecond / 31536000000);
+      var day_age = Math.floor((diffInMillisecond % 31536000000) / 86400000);
+      age = ` ${year_age} years, ${day_age} days`;
+      domainName = urlToCheck;
+      error = '';
+    } catch (err) {
+      alert("Unable to resolve  >> " + urlToCheck + " <<  Try again later");
+    }
   }
 </script>
 
@@ -50,20 +54,19 @@
 
   <!-- if no data, nothing is displayed -->
   {#if regDate}
-  <Card shadow='sm' mt='1rem'>
-    <Group m='md'>
-        <Text weight={500} pr='xl'>Domain name: </Text>
-        <Text weight={400} pl='xl'>{domainName}</Text>
-    </Group>
-    <Group m='md'>
-        <Text weight={500} pr='xl'>Registered: </Text>
-        <Text weight={400} pl='xl'>{regDate}</Text>
-    </Group>
-    <Group m='md'>
-        <Text weight={500} pr='xl'>Age: </Text>
-        <Text weight={400} pl= 'xl'>{age}</Text>
-    </Group>
-  </Card>
+    <Card shadow="sm" mt="1rem">
+      <Group m="md">
+        <Text weight={500} pr="xl">Domain name:</Text>
+        <Text weight={400} pl="xl">{domainName}</Text>
+      </Group>
+      <Group m="md">
+        <Text weight={500} pr="xl">Registered:</Text>
+        <Text weight={400} pl="xl">{regDate}</Text>
+      </Group>
+      <Group m="md">
+        <Text weight={500} pr="xl">Age:</Text>
+        <Text weight={400} pl="xl">{age}</Text>
+      </Group>
+    </Card>
   {/if}
 </Container>
-
