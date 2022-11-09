@@ -1,20 +1,32 @@
 <script>
   import SiteUrlForm from "$lib/components/lookup/SiteUrlForm.svelte";
   import { page } from "$app/stores";
-  import { Card, Center, Group, Container, Text } from "@svelteuidev/core";
+  import {
+    Card,
+    Center,
+    Group,
+    Container,
+    Text,
+    Loader,
+    Alert,
+  } from "@svelteuidev/core";
+  import { InfoCircled } from "radix-icons-svelte";
 
   const currentPath = $page.url.pathname;
   const serverParameterName = "url";
 
-  let regDate = "";
-  let domainName = "";
+  $: regDate = "";
+  $: domainName = "";
+  $: loading = false;
   let age = "";
   let data = "";
-  let error = "";
-  //   let dataParts = [];
+  $: error = false;
 
   async function checkSite(urlToCheck) {
     try {
+      regDate = "";
+      error = false;
+      loading = true;
       const fetchUrl = currentPath + `?${serverParameterName}=${urlToCheck}`;
       const response = await fetch(fetchUrl);
       data = (await response.json()).data;
@@ -32,9 +44,13 @@
       var day_age = Math.floor((diffInMillisecond % 31536000000) / 86400000);
       age = ` ${year_age} years, ${day_age} days`;
       domainName = urlToCheck;
-      error = '';
+
+      loading = false;
     } catch (err) {
-      alert("Unable to resolve  >> " + urlToCheck + " <<  Try again later");
+      regDate = "";
+      loading = false;
+      error = true;
+      domainName = urlToCheck;
     }
   }
 </script>
@@ -52,7 +68,18 @@
     on_submit={checkSite}
   />
 
+  <!-- loading, spinner is displayed -->
+
+  {#if loading === true}
+    <Card shadow="sm" mt="1rem">
+      <Center>
+        <Loader variant="dots" />
+      </Center>
+    </Card>
+  {/if}
+
   <!-- if no data, nothing is displayed -->
+
   {#if regDate}
     <Card shadow="sm" mt="1rem">
       <Group m="md">
@@ -67,6 +94,19 @@
         <Text weight={500} pr="xl">Age:</Text>
         <Text weight={400} pl="xl">{age}</Text>
       </Group>
+    </Card>
+  {/if}
+
+  <!-- if error -->
+
+  {#if error === true}
+    <Card shadow="sm" mt="1rem">
+      <Center>
+        <Alert icon={InfoCircled} title="Oopsie!">
+          Seems like our servers cannot resolve [ {domainName} ], please wait while
+          our devs tries to resolve the issue.
+        </Alert>
+      </Center>
     </Card>
   {/if}
 </Container>
