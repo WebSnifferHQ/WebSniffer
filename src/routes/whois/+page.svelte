@@ -23,7 +23,7 @@
 <Container>
   <Center>
     <h1>
-      <a href="/lookup/whois" style="text-decoration: none;">WHOIS Lookup</a>
+      <a href="/whois" style="text-decoration: none;">WHOIS Lookup</a>
     </h1>
   </Center>
   <SiteUrlForm
