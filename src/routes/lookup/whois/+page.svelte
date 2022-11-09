@@ -34,10 +34,10 @@
 
   {#if data}
     {#each data as singleWhoisServer}
-      <Card bgColor="red" m="xs">
+      <Card m="xs" override={{ backgroundColor:'$blue300' }}>
         <h2>WHOIS server: {singleWhoisServer.server}</h2>
         {#each Object.entries(singleWhoisServer.data) as item}
-          <Paper shadow="sm" withBorder>{item}</Paper>
+          <Paper override={{ backgroundColor:'$blue200' }} shadow="sm" withBorder>{item}</Paper>
         {/each}
       </Card>
     {/each}
