@@ -1,45 +1,58 @@
 <script>
-    import { page } from '$app/stores';
-    import SiteUrlForm from '$lib/components/lookup/SiteUrlForm.svelte';
+  import { page } from "$app/stores";
+  import SiteUrlForm from "$lib/components/lookup/SiteUrlForm.svelte";
 
-    const currentPath = $page.url.pathname;
-    const serverParameterName = "url";
+  import { Card, Center, Paper, Container, Loader } from "@svelteuidev/core";
 
-    let data = undefined;
+  const currentPath = $page.url.pathname;
+  const serverParameterName = "url";
 
-    async function checkSite(urlToCheck) {
-        const fetchUrl = currentPath + `?${serverParameterName}=${urlToCheck}`;
-        const response = await fetch(fetchUrl);
-        data = (await response.json()).formattedData;
-    }
+  $: data = undefined;
+  $: loading = false;
+
+  async function checkSite(urlToCheck) {
+    data = undefined;
+    loading = true;
+    const fetchUrl = currentPath + `?${serverParameterName}=${urlToCheck}`;
+    const response = await fetch(fetchUrl);
+    data = (await response.json()).formattedData;
+    loading = false;
+  }
 </script>
 
-<h1><a href="/lookup/whois" style="text-decoration: none;">WHOIS Lookup</a></h1>
-
-<div>
-    <SiteUrlForm
+<Container>
+  <Center>
+    <h1>
+      <a href="/lookup/whois" style="text-decoration: none;">WHOIS Lookup</a>
+    </h1>
+  </Center>
+  <SiteUrlForm
     label="Enter a site to check it's WHOIS records"
     submit_button_text="whois"
-    on_submit={checkSite} />
+    on_submit={checkSite}
+  />
 
-    {#if data}
-        {#each data as singleWhoisServer}
-            <h2>WHOIS server: {singleWhoisServer.server}</h2>
-            <div class="whois_lookup_output">
-                {#each Object.entries(singleWhoisServer.data) as item}
-                <p>{item}</p>
-                {/each}
-            </div>
+  {#if data}
+    {#each data as singleWhoisServer}
+      <Card bgColor="red" m="xs">
+        <h2>WHOIS server: {singleWhoisServer.server}</h2>
+        {#each Object.entries(singleWhoisServer.data) as item}
+          <Paper shadow="sm" withBorder>{item}</Paper>
         {/each}
-    {/if}
+      </Card>
+    {/each}
+  {/if}
 
-</div>
+  <!-- loading, spinner is displayed -->
+
+  {#if loading === true}
+    <Card shadow="sm" mt="1rem">
+      <Center>
+        <Loader variant="dots" />
+      </Center>
+    </Card>
+  {/if}
+</Container>
 
 <style>
-    .whois_lookup_output {
-        background-color:#dcdcdc;
-        border:1px solid grey;
-        padding:5px;
-        border-radius:5px;
-    }
 </style>

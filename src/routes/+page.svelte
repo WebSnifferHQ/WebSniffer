@@ -16,7 +16,7 @@
 <style>
   ul li {
     text-decoration: none;
-    font: 1em sans-serif;
+    font: 2em sans-serif;
     list-style-type: none;
     margin: .5rem;
     font-weight: 400;
