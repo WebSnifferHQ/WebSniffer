@@ -8,6 +8,7 @@ vite.config.js.timestamp-*
 /packages/create-svelte/template/CHANGELOG.md
 /packages/package/test/**/package
 /documentation/types.js
+build
 .env
 .vercel_build_output
 .svelte-kit
