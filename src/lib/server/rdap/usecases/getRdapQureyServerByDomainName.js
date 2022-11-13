@@ -12,17 +12,16 @@ function matchRdapServerByDomain(domainName, serverList) {
     }
 
     const serviceLink = serverList.find(service => {
-        return service[0].find(element => {
-            return element === domainName
-        }) != undefined;
+        const servedDomains = service[0];
+        return servedDomains.includes(domainName);
     });
+
     if(serviceLink != undefined) {
         return serviceLink;
     }
     const broaderDomainName = getBroaderDomainName(domainName);
     return matchRdapServerByDomain(broaderDomainName, serverList);
 }
-
 
 // for a domain name like example.com return com
 function getBroaderDomainName(domainName) {
