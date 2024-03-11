@@ -37,7 +37,7 @@ You need to have npm installed
 
 # Technologies
 
-This project is tested with **BrowserStack**.
+This project is tested with BrowserStack.
 
 # License
 
