@@ -35,6 +35,10 @@ You need to have npm installed
 - npm install
 - npm run dev
 
+# Technologies
+
+This project is tested with **BrowserStack**.
+
 # License
 
 [GPL-3.0 license](LICENSE) &copy; [WebSniffer](https://websniffer.com/)
